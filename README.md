@@ -7,3 +7,12 @@ docker pull --platform arm64 prom/alertmanager:v0.24.0
 docker pull --platform arm64 prom/alertmanager:v0.24.0
 ```
 使用docker save 保存时，不要使用id，应该使用镜像：tag的形式，使用id保存镜像，重新load会有问题
+
+## ubuntu移除snapd 
+need to remove some dir
+```shell
+rm -rf ~/snap
+sudo rm -rf /snap
+sudo rm -rf /var/snap
+sudo rm -rf /var/lib/snapd
+```
