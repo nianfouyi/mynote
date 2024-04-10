@@ -74,5 +74,16 @@ Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla
 
 sudo apt-get update && sudo apt-get install firefox
-# 这里待确定
+#
 sudo apt-get install firefox-l10n-zh-cn
+
+sudo apt update && sudo apt upgrade
+sudo apt install -y curl gcc make build-essential
+# need to test
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install go 
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+
+export PATH=$PATH:/usr/local/go/bin
+go version
