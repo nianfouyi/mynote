@@ -30,17 +30,8 @@ done
 
 # 2. 卸载 snapd 服务
 echo "卸载 snapd 服务..."
-sudo apt remove --purge -y snapd
-
-# 3. 清理不再需要的依赖软件包
-echo "清理不再需要的软件包..."
-sudo apt autoremove -y
-
-# 4. 删除 snapd 相关的配置文件和目录（慎用，可能会影响系统的其他部分）
-echo "删除 snapd 相关的配置文件和目录..."
-sudo rm -rf /var/cache/snapd/
-sudo rm -rf ~/snap
-sudo find / -type d -name "*snap*" -exec rm -rf {} + 2>/dev/null
+sudo apt purge snapd -y 
+ 
 
 # 5. 创建配置文件以阻止 apt 再次安装 snapd
 echo "创建配置文件以阻止 apt 再次安装 snapd..."
